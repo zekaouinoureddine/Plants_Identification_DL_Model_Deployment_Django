@@ -175,7 +175,7 @@ After re-typing the following command:
     $python manage.py runserever
 You will be able to see our amazing web app interface showen bellow:    
     
-![](interface.PNG)
+![](interface.png)
 
 Congratulations ! We did it .
 ---
@@ -188,7 +188,8 @@ Congratulations ! We did it .
 - Ref 3
 ---
 ### Author Infos
-- LinkedIn - [Nour Eddine ZEKAOUI](https://www.linkedin.com/in/nour-eddine-zekaoui-ba43b1177/)
+- LinkedIn: [Nour Eddine ZEKAOUI](https://www.linkedin.com/in/nour-eddine-zekaoui-ba43b1177/)
+- Twitter: [@NZekaoui](https://twitter.com/NZekaoui)
 
 ---
 
