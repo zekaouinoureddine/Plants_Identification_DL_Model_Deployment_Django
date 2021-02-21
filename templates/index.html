@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/styles.css' %}">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+    </script>
+    <title>Plants Identification</title>
+</head>
+<body>
+<!-- body style="background-image: background-image= url('{% static 'images/bodyimag.jpeg' %}');">-->
+     <table>
+         <tr>
+             <td>
+                <img class="img1"src="{% static 'images/logo.png' %}" title="Institut Scientifique de Rabat" />
+             </td>
+             <td>
+                <h1>PLANTS IDENTIFICATION </h1>
+             </td>
+         </tr>
+    </table> 
+    <fieldset>
+        <legend class="leg1"> Plant Uploading &nbsp;<i class="fa fa-upload" style="font-size:20px;color:white"></i></legend>
+        <form method="post" enctype="multipart/form-data" action="predImg">
+
+            {% csrf_token %}
+
+            <table>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td></td><td> <input type ="file" required name ="img" id ="img" class="inputfile"></td>
+                            </tr>
+                            <tr>
+                                <td></td> <td> <button type ="submit" name="predict" value= "Predict" title="Click here to predict">PREDICT &nbsp; &nbsp; <i class='fas fa-chart-line' style='font-size:20px;color:white'></i></button></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td>
+                        <p class ='tip'>
+                            <i class='far fa-bell' style='font-size:20px;color:red'></i>
+                            For an accurate identification, please upload a high-quality image with excellent resolution without noise in the background as shown here <a href="http://127.0.0.1:8000/"> <i class='fas fa-code' style='font-size:15px;color:#008CBA'></i> </a>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend class= "leg2"> Plant Prediction &nbsp;<i class='fab fa-codiepie' style='font-size:20px;color:white'></i>&nbsp; &nbsp; &nbsp;</legend>
+        <table>
+            <tr>
+                <td>
+                    &nbsp; &nbsp; 
+                </td>
+                <td>
+                    {% if url %}
+                    <img class="img2"src="{{ url }}"  />
+                    {% endif %}
+                </td>
+                <td>
+                    <td>    
+                    </td>
+                    <td>
+                        <div class="Div"><i class="fa fa-sitemap" style="font-size:20px;color:white"></i>&nbsp; &nbsp;PLANT'S CLASS IS : </div>
+                        <div class="Div" id="Div1"><span> <i class="fa fa-magic" style="font-size:20px;color:white"></i>&nbsp; &nbsp;{{predictedClass}}</span></div>
+                    </td>
+
+                    <td>
+                        <div class="Div"><i class='fas fa-gavel' style='font-size:20px;color:white'></i>&nbsp; &nbsp;THE PROBABILITY : </div>
+                        <div class="Div" id="Div1"><span> <i class='fas fa-drafting-compass' style='font-size:20px;color:white'></i>&nbsp; &nbsp;{{probability}}&nbsp;%</span></div>
+                    </td>
+            </tr>
+        </table>
+    </fieldset>
+</body>
+<footer>
+    <div id="footer">
+        &nbsp;&nbsp;&copy; All rights reserved  IS DBEV, UM5 de Rabat &nbsp;
+        <span class="nz">DEVELOPER : Nour Edd<a href="https://www.linkedin.com/in/nour-eddine-zekaoui-ba43b1177/"><i class='fab fa-linkedin' style='font-size:15px;color:white'></i></a>e ZEKAOUI </span>
+        </div>
+</footer>
+</html>
