@@ -173,7 +173,7 @@ TEMPLATES = [
 After re-typing the following command: 
 
     $python manage.py runserever
-You will be able to see our amazing web app interface showen bellow:    
+You will be able to see our amazing web app interface showen below:    
     
 ![](interface.png)
 
